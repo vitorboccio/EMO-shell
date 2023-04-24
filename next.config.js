@@ -2,8 +2,7 @@ const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  webpack: (config, options) => {
-    const { isServer } = options;
+  webpack: (config, { isServer }) => {
     config.experiments = { topLevelAwait: true };
     config.plugins.push(
       new NextFederationPlugin({
